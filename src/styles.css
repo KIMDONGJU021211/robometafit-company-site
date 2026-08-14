@@ -1224,6 +1224,549 @@ button {
   font-style: normal;
 }
 
+.jarvis-section {
+  overflow: hidden;
+  padding: 32px;
+}
+
+.jarvis-shell {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 118px max(54px, calc((100% - 1240px) / 2));
+  overflow: hidden;
+  border-radius: 32px;
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(124, 58, 237, 0.19), transparent 31%),
+    radial-gradient(circle at 8% 42%, rgba(79, 70, 229, 0.1), transparent 28%),
+    linear-gradient(148deg, #080b16 0%, #0b1020 52%, #090d19 100%);
+}
+
+.jarvis-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(129, 140, 248, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(129, 140, 248, 0.13) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 75% 34%, black, transparent 62%);
+  pointer-events: none;
+}
+
+.jarvis-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.jarvis-intro {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: end;
+  gap: 76px;
+}
+
+.jarvis-status {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 25px;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #c4b5fd;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+}
+
+.jarvis-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.11);
+}
+
+.jarvis-intro h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(42px, 4.4vw, 62px);
+  font-weight: 830;
+  letter-spacing: -0.057em;
+  line-height: 1.12;
+  word-break: keep-all;
+}
+
+.jarvis-intro h2 em {
+  color: #c4b5fd;
+  font-style: normal;
+}
+
+.jarvis-intro-copy > p {
+  margin: 0;
+  color: #aab5ca;
+  font-size: 16px;
+  line-height: 1.82;
+  word-break: keep-all;
+}
+
+.jarvis-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.jarvis-tags span {
+  padding: 7px 9px;
+  border: 1px solid rgba(196, 181, 253, 0.15);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.jarvis-product-stage {
+  position: relative;
+  min-height: 840px;
+  margin-top: 82px;
+}
+
+.jarvis-shot {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(196, 181, 253, 0.18);
+  border-radius: 17px;
+  background: #080c18;
+  box-shadow: 0 34px 80px -40px rgba(0, 0, 0, 0.78);
+}
+
+.jarvis-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.jarvis-shot-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 92%;
+}
+
+.jarvis-window-bar {
+  height: 41px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(196, 181, 253, 0.12);
+  background: #0d1221;
+  color: #78849a;
+  font-size: 8px;
+  font-weight: 760;
+  letter-spacing: 0.06em;
+}
+
+.jarvis-window-bar .window-dots {
+  justify-self: start;
+}
+
+.jarvis-window-bar b {
+  justify-self: end;
+  color: #a78bfa;
+  font-size: 8px;
+}
+
+.jarvis-shot-browser,
+.jarvis-shot-approval {
+  position: absolute;
+  bottom: 2px;
+  padding: 7px;
+  background: rgba(11, 16, 32, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.jarvis-shot-browser {
+  left: 0;
+  width: 49%;
+  transform: rotate(-1.1deg);
+}
+
+.jarvis-shot-approval {
+  right: 1%;
+  width: 37%;
+  transform: rotate(1.2deg);
+}
+
+.jarvis-shot-label {
+  display: block;
+  padding: 7px 8px 10px;
+  color: #a78bfa;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.jarvis-stage-note {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 190px;
+  padding: 18px;
+  border: 1px solid rgba(167, 139, 250, 0.19);
+  border-radius: 13px;
+  background: rgba(8, 12, 24, 0.88);
+  box-shadow: 0 20px 50px -28px #000000;
+  backdrop-filter: blur(14px);
+}
+
+.jarvis-stage-note span {
+  color: #a78bfa;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.jarvis-stage-note p {
+  margin: 11px 0 0;
+  color: #8f9bb0;
+  font-size: 11px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.jarvis-architecture {
+  margin-top: 110px;
+  padding: 44px;
+  border: 1px solid rgba(196, 181, 253, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.022);
+}
+
+.jarvis-architecture-heading {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: end;
+  gap: 60px;
+}
+
+.jarvis-architecture-heading h3,
+.jarvis-block-heading h3,
+.jarvis-application h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(29px, 3vw, 42px);
+  font-weight: 810;
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+  word-break: keep-all;
+}
+
+.jarvis-architecture-heading > p,
+.jarvis-block-heading > p:last-child {
+  margin: 0;
+  color: #8f9bb0;
+  font-size: 13px;
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+.jarvis-entry-points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 44px;
+  padding: 13px 16px;
+  border: 1px solid rgba(167, 139, 250, 0.13);
+  border-radius: 11px;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.jarvis-entry-points span {
+  color: #c4b5fd;
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+}
+
+.jarvis-entry-points i {
+  color: #475569;
+  font-style: normal;
+}
+
+.jarvis-flow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.jarvis-flow-step {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 15px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 11px;
+  background: rgba(4, 8, 18, 0.66);
+}
+
+.jarvis-flow-step small {
+  color: #6d7890;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.jarvis-flow-step strong {
+  overflow: hidden;
+  color: #eef2ff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jarvis-flow-step span {
+  color: #77849a;
+  font-size: 10px;
+}
+
+.jarvis-flow-step > i {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -9px;
+  color: #8b5cf6;
+  font-size: 13px;
+  font-style: normal;
+  transform: translateY(-50%);
+}
+
+.jarvis-safety-rail {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 32px;
+  margin-top: 16px;
+  padding: 25px;
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: 13px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.055), rgba(124, 58, 237, 0.055));
+}
+
+.jarvis-safety-rail span {
+  color: #fbbf24;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.jarvis-safety-rail strong {
+  display: block;
+  margin-top: 8px;
+  color: #f8fafc;
+  font-size: 15px;
+}
+
+.jarvis-safety-rail p {
+  margin: 7px 0 0;
+  color: #8f9bb0;
+  font-size: 11px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.jarvis-foundation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.jarvis-foundation b {
+  padding: 11px;
+  border: 1px solid rgba(196, 181, 253, 0.12);
+  border-radius: 8px;
+  background: rgba(4, 8, 18, 0.55);
+  color: #a78bfa;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.jarvis-capability-block,
+.jarvis-principle-block {
+  margin-top: 120px;
+}
+
+.jarvis-block-heading {
+  max-width: 830px;
+}
+
+.jarvis-block-heading > p:last-child {
+  max-width: 660px;
+  margin-top: 18px;
+}
+
+.jarvis-capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.jarvis-capabilities article {
+  min-height: 236px;
+  padding: 27px;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.jarvis-capabilities article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(167, 139, 250, 0.3);
+  background: rgba(124, 58, 237, 0.055);
+}
+
+.jarvis-capabilities article > span {
+  color: #8b5cf6;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+}
+
+.jarvis-capabilities h4,
+.jarvis-principles h4 {
+  margin: 47px 0 0;
+  color: #f1f5f9;
+  font-size: 21px;
+  font-weight: 790;
+  letter-spacing: -0.035em;
+}
+
+.jarvis-capabilities p,
+.jarvis-principles p {
+  margin: 13px 0 0;
+  color: #8f9bb0;
+  font-size: 12px;
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+.jarvis-principle-block {
+  display: grid;
+  grid-template-columns: 0.74fr 1.26fr;
+  gap: 72px;
+}
+
+.jarvis-principles {
+  display: grid;
+  gap: 10px;
+}
+
+.jarvis-principles article {
+  position: relative;
+  padding: 27px 28px 27px 75px;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.jarvis-principles article:last-child {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.jarvis-principles article > span {
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.jarvis-principles h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.jarvis-application {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 52px 80px;
+  margin-top: 120px;
+  padding: 48px;
+  border: 1px solid rgba(196, 181, 253, 0.18);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(124, 58, 237, 0.12), transparent 42%),
+    rgba(255, 255, 255, 0.025);
+}
+
+.jarvis-application ul {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.jarvis-application li {
+  position: relative;
+  padding-left: 18px;
+  color: #b6c0d2;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.jarvis-application li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8b5cf6;
+}
+
+.jarvis-application > a {
+  grid-column: 1 / -1;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  border-radius: 11px;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 820;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.jarvis-application > a:hover {
+  transform: translateY(-2px);
+  background: #ede9fe;
+}
+
+.jarvis-application > a span {
+  color: #6d28d9;
+  font-size: 18px;
+}
+
 .team-section {
   padding-top: 164px;
 }
@@ -1719,6 +2262,11 @@ footer > small {
   .alture-content { grid-template-columns: 1fr; padding-inline: 52px; }
   .thinking-copy,
   .alture-copy { max-width: 760px; }
+  .jarvis-shell { padding-inline: 52px; }
+  .jarvis-intro { gap: 48px; }
+  .jarvis-product-stage { min-height: 760px; }
+  .jarvis-capabilities { grid-template-columns: repeat(2, 1fr); }
+  .jarvis-principle-block { grid-template-columns: 1fr; gap: 46px; }
   .thinking-flow { margin-top: 20px; }
   .product-intro { gap: 50px; }
   .team-card { grid-template-columns: 36% 64%; }
@@ -1778,9 +2326,40 @@ footer > small {
   .hero-proof div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .section { padding: 110px 24px; }
   .thinking-section,
-  .alture-section { padding: 16px; }
+  .alture-section,
+  .jarvis-section { padding: 16px; }
   .thinking-shell,
   .alture-content { min-height: auto; padding: 88px 28px; border-radius: 24px; }
+  .jarvis-shell { padding: 88px 28px; border-radius: 24px; }
+  .jarvis-intro,
+  .jarvis-architecture-heading { grid-template-columns: 1fr; align-items: start; gap: 34px; }
+  .jarvis-intro-copy { max-width: 680px; }
+  .jarvis-product-stage {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 62px;
+  }
+  .jarvis-shot-main,
+  .jarvis-shot-browser,
+  .jarvis-shot-approval,
+  .jarvis-stage-note {
+    position: static;
+    width: auto;
+    transform: none;
+  }
+  .jarvis-shot-main,
+  .jarvis-stage-note { grid-column: 1 / -1; }
+  .jarvis-stage-note { width: 100%; }
+  .jarvis-architecture { margin-top: 88px; padding: 30px; }
+  .jarvis-flow { grid-template-columns: repeat(3, 1fr); }
+  .jarvis-flow-step > i { display: none; }
+  .jarvis-safety-rail { grid-template-columns: 1fr; }
+  .jarvis-capability-block,
+  .jarvis-principle-block,
+  .jarvis-application { margin-top: 94px; }
+  .jarvis-application { grid-template-columns: 1fr; gap: 36px; }
   .thinking-flow { grid-template-columns: 1fr; }
   .flow-line { display: none; }
   .product-intro,
@@ -1831,6 +2410,31 @@ footer > small {
   .business-card > a { left: 24px; right: 24px; }
   .thinking-shell,
   .alture-content { padding: 72px 20px; }
+  .jarvis-shell { padding: 72px 20px; }
+  .jarvis-intro h2 { font-size: 38px; }
+  .jarvis-intro-copy > p { font-size: 14px; }
+  .jarvis-tags { gap: 6px; }
+  .jarvis-product-stage { grid-template-columns: 1fr; gap: 12px; }
+  .jarvis-shot-main,
+  .jarvis-stage-note { grid-column: auto; }
+  .jarvis-window-bar { grid-template-columns: auto 1fr; gap: 12px; }
+  .jarvis-window-bar > span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .jarvis-window-bar b { display: none; }
+  .jarvis-architecture { padding: 24px 18px; }
+  .jarvis-entry-points { flex-wrap: wrap; gap: 8px; }
+  .jarvis-entry-points i { display: none; }
+  .jarvis-entry-points span { width: 100%; padding: 7px; text-align: center; }
+  .jarvis-flow { grid-template-columns: repeat(2, 1fr); }
+  .jarvis-flow-step { padding: 17px 13px; }
+  .jarvis-safety-rail { padding: 20px; }
+  .jarvis-foundation { grid-template-columns: 1fr 1fr; }
+  .jarvis-capabilities { grid-template-columns: 1fr; margin-top: 38px; }
+  .jarvis-capabilities article { min-height: 0; }
+  .jarvis-capabilities h4 { margin-top: 34px; }
+  .jarvis-principles article { padding: 24px 12px 24px 58px; }
+  .jarvis-principles article > span { left: 10px; top: 27px; }
+  .jarvis-application { padding: 30px 22px; }
+  .jarvis-application > a { gap: 16px; line-height: 1.45; }
   .flow-step { min-height: 108px; }
   .product-gallery { margin-top: 52px; }
   .gallery-tabs { grid-template-columns: 1fr; }

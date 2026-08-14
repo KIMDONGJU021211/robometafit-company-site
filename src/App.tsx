@@ -37,6 +37,30 @@ const processSteps = [
   ["05", "배포와 운영", "안정화와 유지보수까지 지속적으로 함께합니다."],
 ];
 
+const jarvisWorkflow = [
+  ["01", "REQUEST", "사용자 요청"],
+  ["02", "PLAN", "실행 계획"],
+  ["03", "SELECT TOOL", "도구 선택"],
+  ["04", "ACT", "실제 실행"],
+  ["05", "VERIFY", "결과 확인"],
+  ["06", "REPORT", "근거와 결과"],
+];
+
+const jarvisCapabilities = [
+  ["AUTONOMOUS AGENT", "멀티스텝 실행", "요청을 계획 단위로 나누고 필요한 도구를 선택해 작업을 이어갑니다."],
+  ["REAL BROWSER", "브라우저 에이전트", "실제 Chrome에서 검색·탐색·본문 확인·입력과 결과 검증을 수행합니다."],
+  ["MCP BRIDGE", "AI 클라이언트 연결", "Claude Desktop·Cursor에서도 동일한 ONTELIK 도구와 안전 정책을 사용합니다."],
+  ["WORK CONTEXT", "업무와 문서 연결", "Google Workspace와 PDF·DOCX·XLSX·PPTX 등 실제 업무 자료를 연결합니다."],
+  ["LOCAL MULTIMODAL", "로컬 음성·비전", "로컬 AI를 기반으로 음성 인터랙션과 필요할 때만 사용하는 카메라 비전을 지원합니다."],
+  ["GOVERNED ACTION", "통제 가능한 실행", "위험도·화면 승인·감사 기록·체크포인트와 되돌리기로 실행을 통제합니다."],
+];
+
+const jarvisPrinciples = [
+  ["01", "진짜 브라우저에서 움직입니다", "검색 결과만 요약하지 않습니다. 실제 사이트에 들어가 목록과 본문을 읽고, 실행 결과까지 확인합니다."],
+  ["02", "자율성과 통제를 함께 설계했습니다", "안전한 작업은 스스로 진행하고 외부 상태를 바꾸는 작업은 사람이 내용을 확인한 뒤 승인합니다."],
+  ["03", "막혀도 작업을 잃지 않습니다", "로그인·보안 확인·작업 한도에서 현재 지점을 저장하고, 사람이 필요한 단계를 처리하면 이어서 진행합니다."],
+];
+
 function App() {
   const [activeScreen, setActiveScreen] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -376,6 +400,141 @@ function App() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="jarvis-section" aria-labelledby="jarvis-title">
+          <div className="jarvis-shell">
+            <div className="jarvis-intro" data-reveal>
+              <div>
+                <p className="section-kicker section-kicker-light">ONTELIK · GOVERNED AI AGENT</p>
+                <div className="jarvis-status"><span /> BUILT IN-HOUSE · OPERATIONAL</div>
+                <h2 id="jarvis-title">
+                  AI가 답하는 순간을 넘어,<br />
+                  실제 업무가 <em>끝나는 지점</em>까지.
+                </h2>
+              </div>
+              <div className="jarvis-intro-copy">
+                <p>
+                  ONTELIK은 사용자의 목표를 이해하고 필요한 도구를 선택해 실제 Chrome·업무 서비스·
+                  로컬 자료를 확인하고 실행합니다. 중요한 작업은 사람이 통제하고, 실행 결과는 다시 검증합니다.
+                </p>
+                <div className="jarvis-tags" aria-label="ONTELIK 핵심 기술">
+                  {["REAL CHROME", "MCP BRIDGE", "LOCAL FIRST", "HUMAN APPROVAL", "AUDIT & UNDO"].map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="jarvis-product-stage" data-reveal>
+              <figure className="jarvis-shot jarvis-shot-main">
+                <div className="jarvis-window-bar">
+                  <span className="window-dots"><i /><i /><i /></span>
+                  <span>ONTELIK · PRIVATE INTELLIGENCE</span>
+                  <b>LIVE AGENT</b>
+                </div>
+                <img src={`${ASSET}ontelik-agent-result.png`} alt="ONTELIK이 브라우저 조사 결과를 표와 추천으로 정리한 실제 화면" loading="lazy" />
+              </figure>
+
+              <figure className="jarvis-shot jarvis-shot-browser">
+                <span className="jarvis-shot-label">REAL BROWSER EXECUTION</span>
+                <img src={`${ASSET}ontelik-browser-agent.png`} alt="ONTELIK Browser Agent가 실제 Chrome에서 사이트를 탐색한 화면" loading="lazy" />
+              </figure>
+
+              <figure className="jarvis-shot jarvis-shot-approval">
+                <span className="jarvis-shot-label">HUMAN APPROVAL GATE</span>
+                <img src={`${ASSET}ontelik-human-approval.png`} alt="중요한 외부 작업 전 ONTELIK이 사용자 승인을 요청하는 실제 화면" loading="lazy" />
+              </figure>
+
+              <div className="jarvis-stage-note">
+                <span>ACTUAL PRODUCT</span>
+                <p>실제 ONTELIK 워크스페이스와 전용 Chrome, 승인 화면을 사용했습니다.</p>
+              </div>
+            </div>
+
+            <div className="jarvis-architecture" data-reveal>
+              <div className="jarvis-architecture-heading">
+                <div>
+                  <p className="section-kicker section-kicker-light">HOW IT WORKS</p>
+                  <h3>요청부터 검증까지,<br />하나의 실행 루프로 연결합니다.</h3>
+                </div>
+                <p>ONTELIK UI·Voice·Claude Desktop·Cursor가 하나의 런타임과 동일한 안전 규칙을 공유합니다.</p>
+              </div>
+
+              <div className="jarvis-entry-points" aria-label="ONTELIK 요청 채널">
+                <span>ONTELIK UI</span><i>+</i><span>VOICE</span><i>+</i><span>CLAUDE / CURSOR VIA MCP</span>
+              </div>
+
+              <div className="jarvis-flow" aria-label="ONTELIK 작업 흐름">
+                {jarvisWorkflow.map(([number, code, label], index) => (
+                  <div className="jarvis-flow-step" key={code}>
+                    <small>{number}</small>
+                    <strong>{code}</strong>
+                    <span>{label}</span>
+                    {index < jarvisWorkflow.length - 1 && <i aria-hidden="true">→</i>}
+                  </div>
+                ))}
+              </div>
+
+              <div className="jarvis-safety-rail">
+                <div>
+                  <span>HUMAN GATE</span>
+                  <strong>중요한 실행은 화면 승인 후 진행</strong>
+                  <p>로그인·비밀번호·보안 확인이 필요하면 사람에게 넘기고, 통과한 지점부터 다시 이어갑니다.</p>
+                </div>
+                <div className="jarvis-foundation">
+                  {["MEMORY", "CHECKPOINT", "AUDIT", "UNDO"].map((item) => <b key={item}>{item}</b>)}
+                </div>
+              </div>
+            </div>
+
+            <div className="jarvis-capability-block">
+              <div className="jarvis-block-heading" data-reveal>
+                <p className="section-kicker section-kicker-light">IMPLEMENTED CAPABILITIES</p>
+                <h3>데모가 아니라, 실제 운영을 위해 구현했습니다.</h3>
+                <p>브라우저 실행부터 업무 도구, 로컬 AI와 안전 제어까지 하나의 시스템 안에서 작동합니다.</p>
+              </div>
+              <div className="jarvis-capabilities">
+                {jarvisCapabilities.map(([label, title, description], index) => (
+                  <article key={label} data-reveal>
+                    <span>{String(index + 1).padStart(2, "0")} · {label}</span>
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="jarvis-principle-block">
+              <div className="jarvis-block-heading" data-reveal>
+                <p className="section-kicker section-kicker-light">DESIGN PRINCIPLES</p>
+                <h3>기능보다 중요한 것은<br />어떻게 믿고 맡길 수 있는가입니다.</h3>
+              </div>
+              <div className="jarvis-principles">
+                {jarvisPrinciples.map(([number, title, description]) => (
+                  <article key={number} data-reveal>
+                    <span>{number}</span>
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="jarvis-application" data-reveal>
+              <div>
+                <p className="section-kicker section-kicker-light">FROM ONTELIK TO YOUR WORK</p>
+                <h3>이 기술을 고객의 업무에 맞게 확장합니다.</h3>
+              </div>
+              <ul>
+                <li>사내 문서와 웹을 함께 조사하는 AI 비서</li>
+                <li>공고·시장·채용·가격 정보를 확인하는 Agent</li>
+                <li>메일·일정·보고서를 준비하고 승인 후 처리하는 시스템</li>
+                <li>여러 웹서비스의 반복 업무를 수행하는 맞춤형 AI</li>
+              </ul>
+              <a href="#contact">우리 업무에도 적용할 수 있는지 상담하기 <span>→</span></a>
+            </div>
           </div>
         </section>
 
